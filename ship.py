@@ -7,7 +7,7 @@ class Ship():
         self.screen = screen
 
         # Loading an image and getting dimensions
-        self.image = pygame.image.load('img/ally_ship.bmp')
+        self.image = pygame.image.load('img/ally_ship.png')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
