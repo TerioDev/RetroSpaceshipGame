@@ -11,17 +11,17 @@ def run_game():
     pygame.init()
 
     # From settings
-    game_class = Settings()
-    screen = pygame.display.set_mode((game_class.screen_width, game_class.screen_height))
+    game_settings = Settings()
+    screen = pygame.display.set_mode((game_settings.screen_width, game_settings.screen_height))
 
     # Entities
-    ship = Ship(screen)
+    ship = Ship(game_settings, screen)
 
     # Main game loop
     while True:
 
         gf.check_events(ship)
         ship.update()
-        gf.update_scren(game_class, screen, ship)
+        gf.update_scren(game_settings, screen, ship)
 
 run_game()

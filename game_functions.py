@@ -11,13 +11,17 @@ def check_events(ship):
 
         # If exit key is not pressed check for movement keys
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RIGHT or pygame.K_d:
+            if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                 # Move the ship to the right
                 ship.moving_right = True
+            elif event.key == pygame.K_LEFT or event.key == pygame.K_a:
+                ship.moving_left = True
 
         elif event.type == pygame.KEYUP:
-            if event.key == pygame.K_RIGHT or pygame.K_d:
+            if event.key == pygame.K_RIGHT  or event.key == pygame.K_d:
                 ship.moving_right = False
+            elif event.key == pygame.K_LEFT or event.key == pygame.K_a:
+                ship.moving_left = False
 
 def update_scren(game_class, screen, ship):
 
